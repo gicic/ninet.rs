@@ -1,0 +1,212 @@
+.offer-section {
+
+  .selected-hosting-block {
+    @extend .inset;
+    h3 {
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: $blue-dark;
+    }
+    .view-more {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  }
+
+  .inset {
+    @include media-breakpoint-up(sm) {
+      padding-left: 25px;
+    }
+
+  }
+
+  .divider {
+    border-bottom: 1px solid $gray;
+  }
+
+  .find-domain {
+    overflow: hidden;
+
+    .search-form-block {
+      padding: 5px 0 30px 0;
+    }
+  }
+
+  .users-domain .right {
+      position: relative;
+    padding-right: 50px;
+
+    button {
+      position: absolute;
+      right: 0; top: 0;
+      width: 55px; height: 45px;
+      background-color: $blue-dark;
+      color: $white;
+      border: none;
+    }
+  }
+
+  .third-block {
+    padding-top: 20px;
+  }
+
+
+
+  .row-height-helper {
+    @include media-breakpoint-down(md) {
+      > div:nth-of-type(2n+1) {
+        clear: both;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      > div:nth-of-type(3n+1) {
+        clear: both;
+      }
+    }
+  }
+
+  .offer-item-block {
+    .block-title {
+      font-size: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid $gray;
+      padding-bottom: 5px;
+    }
+    label {
+      display: block;
+      padding: 3px 50px 3px 25px;
+      &:before {
+        top: 6px;
+      }
+      &:after {
+        top: 9px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+        .price {
+          text-decoration: none;
+        }
+      }
+
+      .price {
+        font-weight: 600;
+        position: absolute;
+        right: 0; top: 3px;
+      }
+    }
+    @include media-breakpoint-only(xl) {
+      padding-right: 90px;
+      margin-bottom: 30px;
+    }
+    @include media-breakpoint-only(lg) {
+      padding-right: 80px;
+      margin-bottom: 30px;
+    }
+    @include media-breakpoint-only(md) {
+      padding-right: 90px;
+      margin-bottom: 20px;
+    }
+    @include media-breakpoint-only(sm) {
+      padding-right: 40px;
+      margin-bottom: 20px;
+    }
+    @include media-breakpoint-only(xs) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+.offer-buttons-block {
+  margin-top: 30px;
+
+  .site-search {
+    margin: 0;
+  }
+  .go-shop {
+    float: right;
+  }
+
+  @include media-breakpoint-down(xs) {
+    .site-search,
+    .go-shop {
+      width: 100%;
+    }
+
+    .go-shop {
+      margin-top: 20px;
+    }
+  }
+}
+
+.offer-buttons-prev-next {
+  margin-top: 20px;
+  @extend .clearfix;
+
+  .btn-prev {
+    margin: 0;
+  }
+  .btn-next {
+    float: right;
+  }
+
+  @include media-breakpoint-down(xs) {
+    .btn-prev,
+    .btn-next {
+      width: 100%;
+    }
+
+    .btn-next {
+      margin-top: 20px;
+    }
+  }
+}
+
+.radio-additional {
+  position: relative;
+
+  label .price {
+    right: 15px!important;
+  }
+
+  .additional-holder {
+    position: absolute;
+    right: 0; top: 1px;
+    .additional-trigger {
+      text-decoration: none;
+      color: $yellow;
+      width: 15px;
+      text-align: right;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $yellow;
+      }
+    }
+    .additional-content {
+      margin-top: 40px;
+      left: auto; right: 0; margin-left: 20px;
+      &:before {
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #ffffff transparent;
+        left: 200px; top: -10px;
+      }
+      &:after {
+        width: 100%; height: 10px;
+        left: 0; top: -10px;
+      }
+    }
+    &:hover {
+      .additional-content {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md){
+    .additional-holder {
+      top: 3px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.pagination-holder {
+  padding: 40px 0;
+  &.center {
+    text-align: center;
+  }
+}
+
+.pagination {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    float: left;
+
+    a{
+      line-height: 20px;
+      text-align: center;
+      padding: 9px 5px;
+      min-width: 40px;
+      color: $blue-dark;
+      font-weight: 300;
+      font-size: 0.875rem;
+      border: 1px solid $gray;
+      cursor: pointer;
+      display: inline-block;
+      &:hover {
+        background-color: $blue-dark;
+        border-color: $blue-dark;
+        color: $yellow;
+      }
+    }
+
+    &.active a{
+      border-color: $blue-dark;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,360 @@
+.buying-process-menu {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 0.5rem;
+
+  li {
+    display: inline-block;
+    padding: 0 20px 0 16px;
+    position: relative;
+    &:not(:last-of-type) {
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0; top: 50%;
+        @include center(y);
+        margin-top: -2px;
+        height: 20px; width: 2px;
+        background-color: $white;
+      }
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: $white;
+    }
+
+    &.active {
+      a,
+      a:hover {
+        cursor: default;
+        color: $yellow;
+      }
+    }
+
+    &.passed {
+      a,
+      a:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    li {
+      padding: 0 20px 0 16px;
+
+      a {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(sm) {
+    li {
+      padding: 0 10px 0 6px;
+
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    padding-top: 30px;
+    margin-bottom: 0;
+    li {
+      padding: 0;
+      display: block;
+      &:before {
+        display: none;
+      }
+
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+//bp 1
+.bp-cart {
+  padding: 50px 0;
+}
+
+.bp-buttons-block {
+  margin-top: 30px;
+
+  .go-shop {
+    float: right;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 20px;
+    .go-shop,
+    .go-back {
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+}
+
+.promo {
+  .pos-helper {
+    position: relative;
+    padding-right: 100px;
+
+    input {
+      line-height: 25px;
+    }
+
+    button {
+      position: absolute;
+      right: 0; top: 0;
+      height: 45px; width: 100px;
+      background: none;
+      border: none;
+    }
+  }
+}
+
+.site-search {
+  display: inline-block;
+  line-height: 25px;
+  padding: 9px 30px;
+  border: 1px solid $blue-dark;
+  color: $blue-dark;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-top: 30px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 20px;
+  }
+}
+
+//bp 2
+.bp-register-section {
+  padding: 30px 0 50px 0;
+
+  .notification {
+    font-weight: 300;
+    margin-bottom: 2rem;
+
+    &.margin-t {
+      margin-top: 10px;
+    }
+
+    .fa {
+      position: relative;
+      top: -5px;
+      color: $yellow;
+    }
+  }
+
+  .forgotten-pass-trigger {
+    line-height: 20px;
+    padding: 10px 0;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline!important;
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+
+  .forgotten-pass {
+    padding-top: 20px;
+  }
+
+  .payment-icons {
+    padding-left: 25px;
+    img{
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .block-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: $blue-dark;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .checkboxes-block {
+    border-top: 1px solid $gray;
+    padding-top: 20px;
+    &.margin-t {
+      margin-top: 20px;
+    }
+  }
+
+  .user-type-select {
+    margin-bottom: 20px;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px;
+    }
+    .text {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: $blue-dark;
+      line-height: 20px;
+      padding: 10px 0;
+    }
+    .radio-box  {
+      > div {
+        display: inline-block;
+        &:first-of-type {
+          margin-right: 15px;
+        }
+        label {
+          padding-left: 18px;
+        }
+      }
+      @include media-breakpoint-only(xs) {
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .logged-user-block {
+
+    &.margin-t {
+      margin-top: 10px;
+    }
+
+    .user-data {
+      > div {
+        font-size: 1rem;
+        font-weight: 300;
+        color: $blue-dark;
+        line-height: 20px;
+        margin-bottom: 10px;
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 5px;
+        }
+
+        .title {
+          font-size: 0.875rem;
+          color: $text-c;
+          display: inline-block;
+          width: 160px;
+          @include media-breakpoint-only(xs) {
+            width: auto;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .change-password-block {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    @include media-breakpoint-down(sm) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .notification {
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+
+//bp 3
+.bp-purchased-section {
+  padding: 50px 0;
+
+  .text {
+
+  }
+
+  .text1 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: $blue-dark;
+    margin-bottom: 1.5rem;
+  }
+  .text2 {
+    font-weight: 300;
+    font-size: 1.25rem;
+    margin-bottom: 0.875rem;
+    max-width: 560px;
+  }
+  .text3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 560px;
+  }
+  .my-pages-links {
+    padding-top: 20px;
+    > a {
+      font-size: 1rem;
+      color: $blue-dark;
+      text-decoration: underline;
+      display: inline-block;
+      text-transform: uppercase;
+      position: relative;
+      &:not(:last-of-type) {
+        padding-right: 25px;
+        &:before {
+          content: '';
+          position: absolute;
+          height: 16px; width: 1px;
+          right: 12px; top: 50%;
+          @include center(y);
+          background-color: $blue-dark;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 30px 0;
+
+    .text1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .text2 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .text3 {
+      font-size: 0.875rem;
+    }
+    .my-pages-links {
+      padding-top: 10px;
+      > a {
+        font-size: 0.875rem;
+        &:not(:last-of-type) {
+          padding-right: 15px;
+          &:before {
+            right: 8px;
+          }
+        }
+      }
+    }
+
+    .image {
+      padding-top: 20px;
+    }
+  }
+}
+
+.recaptcha-submit-holder {
+  margin-top: 20px;
+  position: relative;
+  padding-left: 200px;
+  .recaptcha {
+    position: absolute;
+    left: 0; top: 0;
+    width: 190px;
+    height: 48px;
+    background: url('../images/recaptcha.png') no-repeat center;
+  }
+}

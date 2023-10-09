@@ -1,0 +1,220 @@
+::selection {
+  background: $blue; /* WebKit/Blink Browsers */
+  color: $white!important;
+}
+::-moz-selection {
+  background: $blue; /* Gecko Browsers */
+  color: $white!important;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+a:focus, a:active,
+button{
+  outline: none!important;
+}
+a{
+  color: $text-c;
+  outline: none;
+}
+
+
+a:hover, a:active, a:focus, a:visited {
+  @include transition-all(.4s);
+  text-decoration: none;
+  color: inherit;
+}
+a.underline:hover, a.underline:active, a.underline:focus, a.underline:visited {
+  text-decoration: underline;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+ul li{
+  list-style-type: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+
+.no-overflow {
+  position: relative;
+  overflow: hidden;
+}
+
+.no-margin {
+  margin: 0!important;
+}
+.no-top-margin {
+  margin-top: 0!important;
+}
+
+.clearfix {
+  &:after,
+  &:before{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.ratio1-1{
+  position: relative;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.ratio1-3{
+  position: relative;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 33.33333333%;
+  }
+}
+
+.ratio2-3{
+  position: relative;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 66.66666667%;
+  }
+}
+
+.ratio3-4{
+  position: relative;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 75%;
+  }
+}
+
+.ratio4-3{
+  position: relative;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 133.33333333%;
+  }
+}
+
+.ratio1-2{
+  position: relative;
+  display: block;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: 50%;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.static {
+  position: static;
+}
+
+.fl-right {
+  float: right;
+}
+
+.inl-bl {
+  display: inline-block;
+}
+
+.center {
+  text-align: center;
+}
+
+.fw-light {
+  font-weight: 300;
+}
+.fw-bold {
+  font-weight: 700;
+}
+.c-yellow {
+  color: $yellow;
+}
+.c-white {
+  color: $white;
+}
+.fs-1_5 {
+  font-size: 1.5rem;
+}
+.fs-2 {
+  font-size: 2rem;
+}
+
+@include media-breakpoint-only(xs) {
+  .xs-block {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .child-block-on-480 > div {
+    width: 100%;
+  }
+}
+
+.image-holder {
+  overflow: hidden;
+}
+
+.cover-img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 9999px;
+  max-height: 9999px;
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  &.align-width{
+    width:100%; height: auto!important;
+  }
+  &.align-height{
+    height:100%; width: auto!important;
+  }
+}
+.cover-bg{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.parallax-effect {
+  position : relative;
+  background-attachment : fixed;
+  background-position   : top center;
+  background-size       : cover;
+}

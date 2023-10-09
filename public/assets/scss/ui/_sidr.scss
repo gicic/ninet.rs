@@ -1,0 +1,75 @@
+.sidr {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: 260px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 15px;
+  background: transparent;
+  color: #fff;
+}
+
+.sidr.right {
+  left: auto;
+  right: -260px;
+}
+.sidr.left {
+  left: -260px;
+  right: auto;
+}
+
+.sidr-inner {
+  padding: 150px 0 0 0;
+  @include media-breakpoint-down(sm) {
+    padding: 90px 0 0 0;
+  }
+
+  nav  {
+    background-color: #f5f5f5;
+    border: 3px solid $yellow;
+    padding: 0 10px 10px 10px;
+    .close-holder {
+      display: block;
+      text-align: right;
+      border-bottom: 1px solid #eee;
+      line-height: 20px;
+      padding: 10px 0;
+      font-size: 1.5rem;
+      color: $blue-dark;
+      cursor: pointer;
+    }
+    > ul {
+      > li {
+        padding: 5px;
+        &:nth-last-of-type(4) {
+          padding-top: 10px;
+          margin-top: 5px;
+          border-top: 1px solid #eee;
+        }
+        a {
+          font-weight: 300;
+          color: $blue-dark;
+          &:hover {
+            color: $blue-dark;
+          }
+        }
+        ul {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+.sidr ul li {
+
+}
+
+#navigation {
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}

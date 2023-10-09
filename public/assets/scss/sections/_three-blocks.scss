@@ -1,0 +1,60 @@
+.three-blocks-section {
+  background-color: #eee;
+  padding: 20px 0;
+}
+
+.three-blocks-item {
+  position: relative;
+  padding: 20px 30px;
+  &:before {
+    content: '';
+    position: absolute;
+    right: -10px; top: 0;
+    height: 100%; width: 1px;
+    background-color: #ccc;
+  }
+  &.no-border:before {
+    display: none;
+  }
+  .icon {
+    display: block;
+    height: 70px;
+    margin-bottom: 20px;
+    &.icon-rocket {
+      background: url('../images/icon-rocket.png') no-repeat center;
+      background-size: contain;
+    }
+    &.icon-24h {
+      background: url('../images/icon-24h.png') no-repeat center;
+      background-size: contain;
+    }
+    &.icon-files {
+      background: url('../images/icon-files.png') no-repeat center;
+      background-size: contain;
+    }
+  }
+  p {
+    margin-bottom: 0;
+    font-weight: 300;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    padding: 10px 20px;
+    .icon {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &:before {
+      display: none;
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    padding: 10px 10px;
+    .icon {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+  }
+}

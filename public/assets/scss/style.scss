@@ -1,0 +1,87 @@
+// ***********************************
+// BASE STRUCTURE (BOOTSTRAP IV COMPONENTS)
+// ***********************************
+
+// Bootstrap Reboot
+//
+// Includes Normalize and Reboot reset.
+
+//@import "bootstrap_scss/variables";
+@import "base";  //  edited file "bootstrap_scss/variables";
+@import "bootstrap_scss/mixins/hover";
+@import "bootstrap_scss/mixins/tab-focus";
+
+@import "bootstrap_scss/normalize";
+@import "bootstrap_scss/reboot";
+
+
+// Bootstrap Grid
+//
+// Includes relevant variables and mixins for the regular (non-flexbox) grid
+// system, as well as the generated predefined classes (e.g., `.col-4-sm`).
+
+@import "bootstrap_scss/mixins/clearfix";
+@import "bootstrap_scss/mixins/breakpoints";
+@import "bootstrap_scss/mixins/grid-framework";
+@import "bootstrap_scss/mixins/grid";
+
+@import "bootstrap_scss/grid";
+
+
+// ***********************************
+// FONTS
+// ***********************************
+
+
+// ***********************************
+// PLUGINS
+// ***********************************
+// inside gulp file
+
+// ***********************************
+// HELPERS
+// ***********************************
+@import "custom_variables";
+@import "custom_mixins";
+@import "usefull-classes";
+
+
+// ***********************************
+// BASE STYLES
+// ***********************************
+@import "theme";
+
+
+// ***********************************
+// UI ELEMENTS
+// ***********************************
+@import "ui/form-elements";
+@import "ui/text-style";
+@import "ui/breadcrumbs";
+@import "ui/sliders";
+@import "ui/sidr";
+@import "ui/scrollbars";
+@import "ui/tabs";
+@import "ui/pagination";
+@import "ui/order-tables";
+
+// ***********************************
+// SECTIONS
+// ***********************************
+@import "sections/header";
+@import "sections/cart";
+@import "sections/find-domain";
+@import "sections/packages";
+@import "sections/why-us";
+@import "sections/testimonials";
+@import "sections/three-blocks";
+@import "sections/page-top";
+@import "sections/news";
+@import "sections/simple-page";
+@import "sections/buying-process";
+@import "sections/top-menu";
+@import "sections/user-pages";
+@import "sections/offer";
+@import "sections/ssl";
+@import "sections/pk-pages";
+@import "sections/footer";

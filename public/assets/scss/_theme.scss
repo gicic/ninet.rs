@@ -1,0 +1,91 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  overflow: visible!important;
+}
+
+@include media-breakpoint-only(xs) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: $font-family1;
+  font-size: 0.875rem;
+  color: $text-c;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+.section-title-t1 {
+  color: $blue-dark;
+  text-align: center;
+  text-transform: uppercase;
+  h2 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    @include media-breakpoint-between(sm, md) {
+      font-size: 2rem;
+    }
+    @include media-breakpoint-only(xs) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+ul.check-list {
+  li {
+    display: block;
+    position: relative;
+    padding: 2px 0 2px 20px;
+    &:before {
+      content: "\f046";
+      font-family: FontAwesome;
+      position: absolute;
+      font-size: 0.875rem;
+      left: 0;
+      @include center(y);
+    }
+  }
+  &.yellow-icon {
+    li:before {
+      color: $yellow;
+    }
+  }
+}
+
+span.three-lines {
+  display: inline-block;
+  width: 30px; height: 3px;
+  background-color: $gray;
+  position: absolute;
+  @include center(y);
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%; height: 3px;
+    top: -6px; left: 0;
+    background-color: $gray;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%; height: 3px;
+    bottom: -6px; left: 0;
+    background-color: $gray;
+  }
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}

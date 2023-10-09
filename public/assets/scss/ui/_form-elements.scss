@@ -1,0 +1,468 @@
+input,
+select,
+textarea {
+  font-size: 100%; /* Corrects font size not being inherited in all browsers */
+  margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: 3px;
+  vertical-align: top; /* Improves readability and alignment in all browsers */
+}
+
+label{
+  padding-right: 10px;
+}
+
+.form-element {
+  position: relative;
+  margin-bottom: 20px;
+  &.required {
+    &:before {
+      content: "\f069";
+      font-family: FontAwesome;
+      width: 10px; text-align: center;
+      position: absolute;
+      color: $yellow;
+      font-size: 0.75rem;
+      line-height: 1;
+      right: -12px; top: 15px;
+      z-index: 1;
+    }
+    &.error {
+      &:before {
+        content: "\f00d";
+        color: $red;
+      }
+    }
+    &.success {
+      &:before {
+        content: "\f00c";
+        color: $green;
+      }
+    }
+  }
+  &.dns1 {
+    &:after {
+      content: "DNS1";
+      position: absolute;
+      font-size: 1rem;
+      line-height: 1;
+      right: -52px; top: 15px;
+      z-index: 1;
+      @include media-breakpoint-only(xs) {
+        right: -45px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 10px;
+    &.required,
+    &.error,
+    &.success{
+      &:before {
+        right: -10px;
+      }
+    }
+  }
+}
+
+.select-holder {
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "\f0d7";
+    font-family: FontAwesome;
+    top: 50%; right: 10px;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #545454;
+    pointer-events: none;
+    @include center(y);
+  }
+}
+
+input, textarea {
+  border: 1px solid $gray;
+  line-height: 20px;
+  padding: 9px 15px;
+  width: 100%;
+  min-width: 1px;
+  position: relative;
+  color: #999999;
+  background-color: $white;
+  @include placeholder(){
+    color: #999999;
+    opacity: 1;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  border: 1px solid $gray;
+  line-height: 20px;
+  padding: 9px 15px;
+  width: 100%;
+  min-width: 1px;
+  position: relative;
+  color: #999999;
+  cursor: pointer;
+
+  .required {
+    content: '*';
+    width: 10px; text-align: center;
+    position: absolute;
+    right: -10px; top: 50%;
+    @include center(y);
+  }
+}
+
+.form-element.type-2 {
+  input, textarea {
+    border: none;
+    line-height: 25px;
+    padding: 10px 15px;
+  }
+
+  select {
+    border: none;
+    line-height: 25px;
+    padding: 10px 15px;
+  }
+}
+
+input[type="color"]{
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+  -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+  -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  -moz-box-sizing:    content-box;
+  box-sizing:         content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+  border: 0;
+  padding: 0;
+}
+
+input[type="file"] {
+  padding: 6px;
+}
+
+//INPUT AND TEXTAREA
+.c-input,
+.c-textarea{
+  border-radius: 0;
+  height: 40px;
+  margin-top: 20px;
+  @include placeholder{
+    color: $text-c;
+  }
+  &.no-margin {
+    margin-top: 0;
+  }
+}
+.c-textarea{
+  min-height: 200px;
+  resize: vertical;
+}
+
+//LABEL
+label{
+  font-weight: 400;
+
+  &.c-input-label {
+    line-height: 20px;
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 0
+  }
+
+  @include media-breakpoint-down(sm){
+
+    &.c-input-label{
+      padding: 0px;
+      margin-top: 0px;
+      top: 15px;
+      position: relative;
+    }
+  }
+}
+
+//BUTTONS
+.btn-t1 {
+  position: relative;
+  display: inline-block;
+  line-height: 22px;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 60px 10px 15px;
+  color: $blue-dark;
+  background-color: $yellow;
+  border: none;
+  border-bottom: 3px solid #E8AE00;
+  cursor: pointer;
+  &:visited {
+    color: $blue-dark;
+  }
+  .fa {
+    position: absolute;
+    display: inline-block;
+    width: 45px; height: 45px;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 42px;
+    top: 0; right: 0;
+    color: #5A6C85;
+    background-color: #4C607B;
+    border-bottom: 3px solid #445975;
+  }
+  &:hover {
+    color: $blue-dark;
+  }
+  &.margin-t {
+    margin-top: 20px;
+  }
+  &.no-icon {
+    padding-right: 15px;
+  }
+  &.full-width {
+    width: 100%;
+  }
+}
+
+.btn-t2 {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: $blue-dark;
+  border: none;
+  border: 1px solid $blue-dark;
+  line-height: 21px;
+  padding: 6px 15px;
+  cursor: pointer;
+  @include transition-all(0.4s);
+  &:hover {
+    color: $blue-dark;
+    background-color: $yellow;
+    border-color: $yellow;
+  }
+  &.margin-t {
+    margin-top: 20px;
+  }
+}
+
+.btn-t3 {
+  @extend .btn-t1;
+  border: 1px solid $blue-dark;
+  background-color: transparent;
+  .fa {
+    font-size: 1.75rem;
+    color: #5A6C85;
+    background-color: transparent;
+    border: none;
+  }
+  &.left {
+    padding: 10px 15px 10px 60px;
+    .fa {
+      right: auto; left: 0;
+    }
+
+  }
+}
+
+.btn-wishes {
+  @extend .btn-t1;
+  border-color: $gray;
+  background-color: $gray;
+  color: #525252;
+  font-weight: 400;
+  text-transform: none;
+  .fa {
+    font-size: 1.25rem;
+    color: #5C6E87;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+//RADIO BUTTONS
+.radio-box {
+  input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+  }
+
+  label{
+    @include no-select();
+    position: relative;
+    line-height: 20px;
+    padding: 10px 0 10px 25px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 0;
+
+    &:before{
+      position: absolute;
+      content:"";
+      width: 12px; height: 12px;
+      border: 1px solid $black;
+      border-radius: 50%;
+      left: 0;
+      top:13px;
+    }
+
+    &:after{
+      position: absolute;
+      content:"";
+      width: 6px; height: 6px;
+      background-color: $black; /*ovo je backup color*/
+      border-radius: 50%;
+      left: 3px;
+      top: 16px;
+      display: none;
+    }
+
+    &.active:after {
+      display: inline-block;
+    }
+
+    &.radio-left{
+      padding-left: 30px;
+    }
+  }
+}
+
+//CHECKBOXES
+.checkbox {
+
+  input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  label{
+    @include no-select();
+    position: relative;
+    line-height: 22px;
+    padding: 10px 35px 0 0;
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    font-weight: 300;
+    &:before{
+      content: "";
+      position: absolute;
+      right: 0; top: 11px;
+      width: 22px; height: 22px;
+      border: 1px solid $gray;
+      background-color: $white;
+      border-radius: 0;
+    }
+    &:after{
+      content: "\f00c";
+      font-family: FontAwesome;
+      position: absolute;
+      right: 4px; top: 12px;
+      display: none;
+      color: $black;
+    }
+
+    &.active:after{display: inline-block;}
+  }
+
+  &.left {
+
+    label {
+      text-align: left;
+      padding: 10px 0 0 35px;
+      &:before{
+        right: auto; left: 0;
+      }
+      &:after{
+        right: auto; left: 3px;
+      }
+    }
+  }
+
+  &.margin {
+    margin-top: 20px;
+  }
+}
+
+
+.contact-form {
+  textarea {
+    min-height: 180px;
+  }
+  .divider {
+    border-bottom: 1px solid $gray;
+  }
+  .add-file-text {
+    display: block;
+    line-height: 20px;
+    padding: 10px 0;
+    margin-bottom: 0;
+    @include media-breakpoint-only(xs) {
+      padding: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.counter {
+  width: 90px;
+  height: 30px;
+  padding: 0 30px;
+  position: relative;
+  input {
+    width: 100%;
+    padding: 0;
+    border: 1px solid $gray;
+    border-width: 1px 0;
+    line-height: 28px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+  }
+  > div {
+    width: 30px; height: 30px;
+    border: 1px solid $gray;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    line-height: 28px;
+    font-size: 16px;
+    text-align: center;
+    &:first-of-type {
+      right: 0;
+    }
+    &:last-of-type {
+      left: 0;
+    }
+  }
+}

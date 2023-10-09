@@ -1,0 +1,22 @@
+.page-top-part {
+  padding-bottom: 30px;
+  background: $blue-dark url('../images/texture-dot.png');
+
+  .page-title-block {
+    text-align: center;
+    color: $white;
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+    .page-short-desc {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 920px;
+      padding-top: 20px;
+    }
+  }
+}

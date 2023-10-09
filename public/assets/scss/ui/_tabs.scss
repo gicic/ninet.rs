@@ -1,0 +1,533 @@
+.tab-pane {
+  display: none;
+  @include transition-all(0.4s);
+  &.active {
+    display: block;
+  }
+}
+
+/////////////////////////////////////////////////
+//Tab type1
+/////////////////////////////////////////////////
+.tab-t1 {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  text-align: center;
+
+  > li {
+    display: inline-block;
+    &:not(:first-of-type) {
+      border-left: 1px solid $white;
+    }
+    a {
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding: 0 15px;
+      color: $white;
+      @include media-breakpoint-only(xs) {
+        font-size: 1rem;
+        padding: 0 5px;
+      }
+    }
+    &.active a,
+    &:hover a{
+      color: $yellow;
+    }
+  }
+}
+
+/////////////////////////////////////////////////
+//Tab type2
+/////////////////////////////////////////////////
+.tab-t2 {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $gray;
+
+  > li {
+    position: relative;
+    top: 1px;
+    border: 1px solid;
+    border-color: transparent transparent $gray transparent;
+    &.active {
+      border-color: $gray $gray #f5f5f5 $gray;
+    }
+    a {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: $blue-dark;
+      line-height: 30px;
+      padding: 10px;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.active a,
+    &:hover a{
+      color: $blue-dark;
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex: 1;
+      a {
+        font-size: 1.125rem;
+      }
+    }
+
+    @include media-breakpoint-only(md) {
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.tab-t2-holder {
+  padding: 60px 0 50px 0;
+  .tab-content {
+    border: 1px solid $gray;
+    border-width: 0 1px 1px 1px;
+    padding: 20px 40px 30px 70px;
+
+    .paragraph-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      position: relative;
+      margin-bottom: 10px;
+      margin-top: 20px;
+
+      span.fa {
+        position: absolute;
+        left: -30px; top: 0;
+        display: inline-block;
+        width: 20px; text-align: center;
+      }
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        color: $red;
+        text-decoration: underline;
+      }
+    }
+
+    @include media-breakpoint-only(xs) {
+      padding: 15px 20px 20px 40px;
+    }
+  }
+}
+
+/////////////////////////////////////////////////
+//Tab type3
+/////////////////////////////////////////////////
+.tab-t3 {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid $gray;
+
+  > li {
+    flex: auto;
+    border: 1px solid;
+    border-color: transparent transparent $gray transparent;
+    position: relative;
+    top: 1px;
+    &.active {
+      border-color: $gray $gray #f5f5f5 $gray;
+    }
+    &.selected {
+      a:before {
+        position: relative;
+        content: "\f00c";
+        font-family: FontAwesome;
+        font-size: 0.75rem;
+        color: $yellow;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+    a {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: $blue-dark;
+      line-height: 30px;
+      padding: 10px 3px;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.active a,
+    &:hover a{
+      color: $blue-dark;
+    }
+
+    @include media-breakpoint-up(lg) {
+      &.selected {
+        a:before {
+          font-size: 1.125rem;
+        }
+      }
+      a {
+        font-size: 1.125rem;
+      }
+    }
+
+    @include media-breakpoint-only(md) {
+      &.selected {
+        a:before {
+          font-size: 1rem;
+        }
+      }
+      a {
+        font-size: 1rem;
+      }
+    }
+
+    @include media-breakpoint-only(xs) {
+      .invisible-on-smallest {
+        display: none;
+      }
+      &.selected a:before {
+        position: absolute;
+        margin: 0;
+        top: -5px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+      }
+    }
+  }
+}
+
+.tab-t3-holder {
+  padding: 60px 0 50px 0;
+  .tab-content {
+    border: 1px solid $gray;
+    border-width: 0 1px 1px 1px;
+    padding: 20px 20px 20px 20px;
+
+  }
+}
+
+/////////////////////////////////////////////////
+//Tab type4
+/////////////////////////////////////////////////
+.tab-t4 {
+  width: 100%;
+  position: relative;
+  @extend .clearfix;
+  @include media-breakpoint-up(sm) {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0;
+      height: 5000px; width: 100%;
+      background-color: #CFD6DE;
+    }
+  }
+
+  > li {
+    position: relative;
+    a {
+      font-size: 1.5rem;
+      line-height: 45px;
+      font-weight: 700;
+      color: $blue-dark;
+      padding: 15px 25px;
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      position: relative;
+      &:before {
+        content: "\f046";
+        font-family: FontAwesome;
+        font-size: 1.125rem;
+        color: $blue-dark;
+        position: absolute;
+        left: 25px; top: 15px;
+        @include transition-all(0);
+        opacity: 0;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      span.additional-text {
+        display: block;
+        font-weight: 700;
+        font-size: 1.125rem;
+        color: #545454;
+        text-transform: none;
+        line-height: 1.2;
+      }
+    }
+    &.active a,
+    &:hover a{
+      color: $blue-dark;
+      background-color: #F5F5F5;
+    }
+    &.active {
+      a {
+        padding-left: 45px;
+        &:before {
+          opacity: 1;
+          @include transition-all(0.4s);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    > li {
+      a {
+        font-size: 1.25rem;
+        span.additional-text {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-only(sm) {
+    > li {
+      a {
+        font-size: 1rem;
+        line-height: 20px;
+        color: $blue-dark;
+        padding: 10px 10px;
+        &:before {
+          content: "\f046";
+          font-family: FontAwesome;
+          font-size: 1rem;
+          left: 10px; top: 10px;
+        }
+        span.additional-text {
+          font-size: 0.875rem;
+        }
+      }
+      &.active {
+        a {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-only(xs) {
+    background-color: #CFD6DE;
+    .invisible-on-smallest {
+      display: none!important;
+    }
+    > li {
+      position: relative;
+      float: left; width: 33.33333333%;
+      a {
+        font-size: 0.875rem;
+        line-height: 20px;
+        color: $blue-dark;
+        padding: 10px 5px;
+        &:before {
+          content: "\f046";
+          font-family: FontAwesome;
+          font-size: 0.875rem;
+          left: 5px; top: 10px;
+        }
+      }
+      &.active {
+        a {
+          padding-left: 20px;
+        }
+      }
+    }
+
+
+  }
+}
+
+.tab-t4-holder {
+  overflow: hidden;
+  @extend .clearfix;
+  background-color: #F5F5F5;
+  border: 1px solid $gray;
+  .tab-content {
+    padding-right: 20px;
+    @include media-breakpoint-only(xs){
+      padding: 0 10px;
+    }
+  }
+}
+
+/////////////////////////////////////////////////
+//Tab type5
+/////////////////////////////////////////////////
+.tab-t5 {
+  width: 100%;
+  border-bottom: 1px solid $gray;
+
+  > li {
+    display: inline-block;
+    border: 1px solid;
+    border-color: transparent transparent $gray transparent;
+    position: relative;
+    top: 1px;
+    &.active {
+      border-color: $gray $gray #f5f5f5 $gray;
+    }
+    &.selected {
+      a:before {
+        position: relative;
+        content: "\f00c";
+        font-family: FontAwesome;
+        font-size: 0.75rem;
+        color: $yellow;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+    a {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: $blue-dark;
+      line-height: 30px;
+      padding: 10px 40px;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.active a,
+    &:hover a{
+      color: $blue-dark;
+    }
+
+    @include media-breakpoint-up(lg) {
+      &.selected {
+        a:before {
+          font-size: 1.125rem;
+        }
+      }
+      a {
+        font-size: 1.125rem;
+      }
+    }
+
+    @include media-breakpoint-only(md) {
+      &.selected {
+        a:before {
+          font-size: 1rem;
+        }
+      }
+      a {
+        font-size: 1rem;
+      }
+    }
+
+    @include media-breakpoint-only(xs) {
+      .invisible-on-smallest {
+        display: none;
+      }
+      &.selected a:before {
+        position: absolute;
+        margin: 0;
+        top: -5px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+      }
+    }
+  }
+}
+
+.tab-t5-holder {
+  padding: 60px 0 50px 0;
+  .tab-content {
+    border: 1px solid $gray;
+    border-width: 0 1px 1px 1px;
+    padding: 20px 20px 20px 20px;
+
+  }
+}
+
+/////////////////////////////////////////////////
+//Tab type6
+/////////////////////////////////////////////////
+.tab-t6 {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+
+  > li {
+    display: inline-block;
+    border: 1px solid;
+    border-color: transparent;
+    position: relative;
+    top: 1px;
+    flex: 1;
+    &.active {
+      border-color: $gray;
+    }
+    &.selected {
+      a:before {
+        position: relative;
+        content: "\f00c";
+        font-family: FontAwesome;
+        font-size: 0.75rem;
+        color: $yellow;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+    a {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: $blue-dark;
+      line-height: 30px;
+      padding: 10px;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.active a,
+    &:hover a{
+      color: $blue-dark;
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    display: block;
+    > li {
+      display: block;
+      a {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.tab-t6-holder {
+  .tab-content {
+    border: none;
+    padding: 0;
+  }
+}

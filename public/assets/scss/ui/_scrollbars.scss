@@ -1,0 +1,228 @@
+/*************** SCROLLBAR BASE CSS ***************/
+
+.scroll-wrapper {
+  overflow: hidden !important;
+  position: relative;
+}
+
+.scroll-wrapper > .scroll-content {
+  border: none !important;
+  box-sizing: content-box !important;
+  height: auto;
+  left: 0;
+  margin: 0;
+  max-height: none !important;
+  max-width: none !important;
+  overflow: scroll !important;
+  padding: 0;
+  position: relative !important;
+  top: 0;
+  width: auto !important;
+}
+
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+.scroll-element {
+  display: none;
+}
+.scroll-element, .scroll-element div {
+  box-sizing: content-box;
+}
+
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+  display: block;
+}
+
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+  cursor: default;
+}
+
+.scroll-textarea {
+  border: 1px solid #cccccc;
+  border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+  overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+  border: none !important;
+  box-sizing: border-box;
+  height: 100% !important;
+  margin: 0;
+  max-height: none !important;
+  max-width: none !important;
+  overflow: scroll !important;
+  outline: none;
+  padding: 2px;
+  position: relative !important;
+  top: 0;
+  width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+
+
+////////////////////////////////////////
+//domains scroller
+////////////////////////////////////////
+
+.domains-scroller > .scroll-element,
+.domains-scroller > .scroll-element div {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+.domains-scroller > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.domains-scroller > .scroll-element.scroll-x {
+  bottom: 2px;
+  height: 8px;
+  left: 0;
+  width: 100%;
+}
+
+.domains-scroller > .scroll-element.scroll-y {
+  height: 100%;
+  right: 22px;
+  top: 0;
+  width: 12px;
+}
+
+.domains-scroller > .scroll-element .scroll-element_outer {
+  overflow: hidden;
+}
+
+.domains-scroller > .scroll-element .scroll-element_outer,
+.domains-scroller > .scroll-element .scroll-element_track,
+.domains-scroller > .scroll-element .scroll-bar {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.domains-scroller > .scroll-element .scroll-element_track,
+.domains-scroller > .scroll-element .scroll-bar {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.domains-scroller > .scroll-element .scroll-bar{opacity: 1;}
+
+.domains-scroller > .scroll-element .scroll-element_track { background-color: rgba($white, 1); width: 6px; margin-left: 3px;}
+.domains-scroller > .scroll-element .scroll-bar { background: $blue-dark url('../images/scroller.jpg'); }
+.domains-scroller > .scroll-element:hover .scroll-bar { background: $blue-dark url('../images/scroller.jpg'); }
+.domains-scroller > .scroll-element.scroll-draggable .scroll-bar { background-color: $blue-dark; }
+
+
+/* update scrollbar offset if both scrolls are visible */
+
+.domains-scroller > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+.domains-scroller > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+
+
+.domains-scroller > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+.domains-scroller > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
+
+.scroll-wrapper.domains-scroller{
+  max-height: 330px;
+  margin-right: -55px;
+  padding-right: 55px;
+}
+
+
+////////////////////////////////////////
+//cart scroller
+////////////////////////////////////////
+
+.cart-items-scroller > .scroll-element,
+.cart-items-scroller > .scroll-element div {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+.cart-items-scroller > .scroll-element div {
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.cart-items-scroller > .scroll-element.scroll-x {
+  bottom: 2px;
+  height: 8px;
+  left: 0;
+  width: 100%;
+}
+
+.cart-items-scroller > .scroll-element.scroll-y {
+  height: 100%;
+  right: 10px;
+  top: 0;
+  width: 12px;
+}
+
+.cart-items-scroller > .scroll-element .scroll-element_outer {
+  overflow: hidden;
+}
+
+.cart-items-scroller > .scroll-element .scroll-element_outer,
+.cart-items-scroller > .scroll-element .scroll-element_track,
+.cart-items-scroller > .scroll-element .scroll-bar {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.cart-items-scroller > .scroll-element .scroll-element_track,
+.cart-items-scroller > .scroll-element .scroll-bar {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+.cart-items-scroller > .scroll-element .scroll-bar{opacity: 1;}
+
+.cart-items-scroller > .scroll-element .scroll-element_track { background-color: rgba($white, 1); width: 6px; margin-left: 3px;}
+.cart-items-scroller > .scroll-element .scroll-bar { background: $blue-dark url('../images/scroller.jpg'); }
+.cart-items-scroller > .scroll-element:hover .scroll-bar { background: $blue-dark url('../images/scroller.jpg'); }
+.cart-items-scroller > .scroll-element.scroll-draggable .scroll-bar { background-color: $blue-dark; }
+
+
+/* update scrollbar offset if both scrolls are visible */
+
+.cart-items-scroller > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+.cart-items-scroller > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+
+
+.cart-items-scroller > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+.cart-items-scroller > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
+
+.scroll-wrapper.cart-items-scroller{
+  max-height: 240px;
+  margin-right: -10px;
+  padding-right: 32px;
+  &.no-scrollbar {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}

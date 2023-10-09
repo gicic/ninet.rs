@@ -1,0 +1,102 @@
+.simple-page {
+  padding: 40px 0;
+  @include media-breakpoint-only(xs) {
+    padding: 20px 0;
+  }
+}
+
+.technical-support-section {
+  color: #B2BFCC;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  padding: 280px 20px 20px 20px;
+  background: url('../images/technical-support.png') no-repeat center top 20px;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    height: 100%; width: 100%;
+    z-index: -1;
+    background: $blue-dark url("../images/texture-dot.png");
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  @include media-breakpoint-between(sm, md) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+}
+
+.about-us-section {
+  font-size: 0.875rem;
+  font-weight: 400;
+  position: relative;
+  background: $blue-dark url("../images/texture-dot.png");
+  padding: 40px 30px 40px 40px;
+  margin-top: 20px;
+  color: $white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 20px; right: 20px; bottom: 20px; left: 20px;
+    border: 1px solid $yellow;
+    pointer-events: none;
+  }
+
+  > div:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  .info-item {
+    padding-left: 15px;
+    position: relative;
+    span {
+      display: inline-block;
+    }
+    .fa {
+      position: absolute;
+      left: -10px; top: 3px;
+      width: 20px;
+      text-align: center;
+      color: $yellow;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @include media-breakpoint-only(md) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 10px;
+    padding: 20px 15px 20px 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 10px; right: 10px; bottom: 10px; left: 10px;
+    }
+
+    > div:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+
+    .info-item {
+      .fa {
+        left: -7px;
+      }
+    }
+  }
+}

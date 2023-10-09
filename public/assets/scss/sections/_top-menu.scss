@@ -1,0 +1,325 @@
+.user-menu {
+  position: relative;
+  .user-menu-trigger {
+    position: relative;
+    line-height: 20px;
+    display: inline-block;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px; right: 0; bottom: -10px; left: 0;
+      background-color: transparent;
+      z-index: -1;
+      @include transition-all(0.4s);
+    }
+  }
+  .user-menu-content {
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid $yellow;
+    border-top: none;
+    position: absolute;
+    top: 100%; right: 0;
+    padding: 15px 0;
+    width: 260px;
+    margin-top: 30px;
+    visibility: hidden;
+    opacity: 0;
+    @include transition-all(0.4s);
+  }
+  &.drop-open {
+    .user-menu-trigger {
+      color: $yellow;
+      &:before {
+        background-color: $blue-dark;
+      }
+    }
+    .user-menu-content {
+      margin-top: 10px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .close-menu {
+    font-size: 1.5rem;
+    color: $blue-dark;
+    cursor: pointer;
+    position: absolute;
+    right: 15px; top: 10px;
+    z-index: 1;
+    &:hover {
+      color: $yellow!important;
+    }
+  }
+
+  .user-image-block {
+    text-align: center;
+    padding-bottom: 15px;
+    img {
+      max-width: 110px; max-height: 110px;
+    }
+  }
+  .user-links-block {
+    li {
+      display: block;
+
+      a {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $blue-dark;
+        display: block;
+        line-height: 20px;
+        padding: 5px 30px;
+        .fa {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        &:hover {
+          background-color: $blue-dark;
+          color: $yellow;
+        }
+      }
+
+      &.active {
+        a {
+          pointer-events: none;
+          cursor: default;
+          background-color: $blue-dark;
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-between(xs,sm){
+    .user-menu-trigger {
+      &:before {
+        top: -5px; bottom: -5px;
+      }
+    }
+    .user-menu-content {
+      margin-top: 25px;
+    }
+    &.drop-open {
+      .user-menu-content {
+        margin-top: 5px;
+      }
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    position: static;
+    .user-menu-trigger {
+      &:before {
+        top: -5px; bottom: -5px;
+      }
+    }
+    .user-menu-content {
+      width: 100%;
+      margin-top: 20px;
+    }
+    &.drop-open {
+      .user-menu-content {
+        margin-top: 0;
+      }
+    }
+
+  }
+}
+
+.language-menu {
+  position: relative;
+  .language-menu-trigger {
+    position: relative;
+    line-height: 20px;
+    display: inline-block;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px; right: 0; bottom: -10px; left: 0;
+      background-color: transparent;
+      z-index: -1;
+      @include transition-all(0.4s);
+    }
+  }
+  .language-menu-content {
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid $yellow;
+    border-top: none;
+    position: absolute;
+    top: 100%; right: 0;
+    padding: 15px 0;
+    width: 260px;
+    margin-top: 30px;
+    visibility: hidden;
+    opacity: 0;
+    @include transition-all(0.4s);
+  }
+  &.drop-open {
+    .language-menu-trigger {
+      color: $yellow;
+      &:before {
+        background-color: $blue-dark;
+      }
+    }
+    .language-menu-content {
+      margin-top: 10px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .language-links-block {
+    li {
+      display: block;
+
+      a {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $blue-dark;
+        display: block;
+        line-height: 20px;
+        padding: 5px 30px;
+        .fa {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        &:hover {
+          background-color: $blue-dark;
+          color: $yellow;
+        }
+      }
+
+      &.active {
+        a {
+          pointer-events: none;
+          cursor: default;
+          background-color: $blue-dark;
+          color: $yellow;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-between(xs,sm){
+    .language-menu-trigger {
+      &:before {
+        top: -5px; bottom: -5px;
+      }
+    }
+    .language-menu-content {
+      margin-top: 25px;
+    }
+    &.drop-open {
+      .language-menu-content {
+        margin-top: 5px;
+      }
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    position: static;
+    .language-menu-trigger {
+      &:before {
+        top: -5px; bottom: -5px;
+      }
+    }
+    .language-menu-content {
+      width: 100%;
+      margin-top: 20px;
+    }
+    &.drop-open {
+      .language-menu-content {
+        margin-top: 0;
+      }
+    }
+
+  }
+}
+
+.search-menu {
+  position: relative;
+  .search-menu-trigger {
+    position: relative;
+    line-height: 20px;
+    display: inline-block;
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px; right: 0; bottom: -10px; left: 0;
+      background-color: transparent;
+      z-index: -1;
+      @include transition-all(0.4s);
+    }
+  }
+  .search-menu-content {
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid $yellow;
+    border-top: none;
+    position: absolute;
+    top: 100%; right: 0;
+    padding: 5px;
+    width: 260px;
+    margin-top: 30px;
+    visibility: hidden;
+    opacity: 0;
+    @include transition-all(0.4s);
+
+    .position-helper {
+      position: relative;
+      padding-right: 55px;
+      button {
+        position: absolute;
+        right: 0; top: 0;
+        width: 55px; height: 45px;
+        background-color: $blue-dark;
+        color: $white;
+        border: none;
+      }
+    }
+  }
+  &.drop-open {
+    .search-menu-trigger {
+      color: $yellow;
+      &:before {
+        background-color: $blue-dark;
+      }
+    }
+    .search-menu-content {
+      margin-top: 10px;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  @include media-breakpoint-between(xs,sm){
+    .search-menu-trigger {
+      &:before {
+        top: -5px; bottom: -5px;
+      }
+    }
+    .search-menu-content {
+      margin-top: 25px;
+    }
+    &.drop-open {
+      .search-menu-content {
+        margin-top: 5px;
+      }
+    }
+  }
+  @include media-breakpoint-only(xs) {
+    position: static;
+    .search-menu-trigger {
+      &:before {
+        top: -5px; bottom: -5px;
+      }
+    }
+    .search-menu-content {
+      width: 100%;
+      margin-top: 20px;
+    }
+    &.drop-open {
+      .search-menu-content {
+        margin-top: 0;
+      }
+    }
+
+  }
+}
+

@@ -1,0 +1,42 @@
+// ***********************************
+// VARIABLES
+// ***********************************
+
+// TYPOGRAPHY
+$font-family1: 'Poppins', sans-serif;
+//
+// Headings
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
+
+
+
+// COLORS
+$white: #fff;
+$black: #535353;
+$black-dark: #333;
+$gray: #ddd;
+$yellow: #FFC20E;
+$red: #FF7272;
+$green: #85B200;
+$blue: #2C4363;
+$blue-dark: #142E52;
+$blue-light: #5C6E87;
+
+$text-c: $black;
+
